@@ -1,4 +1,4 @@
-//@liv-in-sky Januar 2021 18.4-17:46
+//@liv-in-sky Januar 2021 21.4-17:46
 // https://forum.iobroker.net/topic/28789/script-fürtabelle-der-batterie-zustände 
 
 //HIER WIRD PFAD UND FILENAME DEFINIERT
@@ -312,6 +312,7 @@ $('sonoff.*.*.*.*BatteryPercentage').each(function(id, i) {           // hier ei
         
           val0=ida[4].replace("_BatteryPercentage","") //getObject(id[4]).common.name ;
           val0=ida[2]+" "+val0
+          if (existsObject(id.replace("BatteryPercentage","Name" ))) val0=getState(id.replace("BatteryPercentage","Name")).val
          // log(val0+"   "+id);
          json1=val0;
          val1help=getState(id).val;
@@ -325,7 +326,7 @@ $('sonoff.*.*.*.*BatteryPercentage').each(function(id, i) {           // hier ei
          if (val1help<=battAlarm) AkkuAlarm.push(1);
          if (val1help<=battAlarm)  alarmMessage.push(val0);
           json3=val2;
-            json6="SONOFFRF"
+            json6="SONOFF_ZGBridge"
            if (braucheMaterialDesignWidget || braucheMaterialDesignWidgetTable) {
               json4=json4=pfadBilderMaterialWidget+"sonoffzbk.png"
               makeJsonWidget(json1,json2,json3,json4,json5,json6,json3_1);}
