@@ -61,7 +61,7 @@ var warntimeB="21600000" //5400000=1.5h    "1730000"//
 
 var filterArray=["mihome.5.devices.plug_158d0001f24aad.percent"]; //hier den ganzenpfad von ungewünschten LOW_BAT werten eingeben - diese werden dann gefiltert
                                // BEISPIEL var filterArray=["hm-rpc.0.LEQ0242145.0.LOWBAT", "hm-rpc.0.LEQ0242152.0.LOWBAT","hm-rpc.1.OEQ0473764.0.LOWBAT"];
-let mySchedule="  19 */6 * * * ";                        
+let mySchedule="  */5 * * * ";                        
 //---------------------------------------
  
 //HIER DIE SPALTEN ANZAHL DEFINIEREN - jede Spalte einen Wert - in diesem Beispiel sind es 3
