@@ -1552,8 +1552,8 @@ $('hm-rpc.*.*.0.LOW_BAT').each(function(id, i) {           // hier eigene schlei
               } 
    
    myObjF=[];
-  $('zwave.*.*.BATTERY.Battery_Level*').each(function(id, i) {           // hier eigene schleife definieren und den wert counter++ nicht vergessen  !!!
-     if (!filterArray.includes(id)){
+   $('zwave2.*.*.Battery.level').each(function(id, i) {   // hier eigene schleife definieren und den wert counter++ nicht vergessen  !!!
+      if (!filterArray.includes(id)){
          var ida = id.split('.');
         
          //  counter++; 
